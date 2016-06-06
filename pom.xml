@@ -35,7 +35,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.mauriciotogneri.dry.Main</mainClass>
+                            <mainClass>com.mauriciotogneri.dry.Dry</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
