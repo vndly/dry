@@ -1,0 +1,4 @@
+function duoble(n)
+{
+	return n * 2;
+}

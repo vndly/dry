@@ -1,0 +1,35 @@
+function factorial(n)
+{
+	if (n == 0)
+	{
+		return 1;
+	}
+	elsif (i != 0)
+	{
+		aaa
+	}
+	else
+	{
+		return n * factorial(n - 1);
+	}
+}
+
+function loop(a, b)
+{
+	for (i, a..b)
+	{
+		print(i);
+	}
+
+	while (i > 0)
+	{
+		print(i);
+		i = i - 1;
+	}
+
+	num  = readNumber();
+	text = readText();
+	char = readChar();
+
+	print('pwd');
+}
