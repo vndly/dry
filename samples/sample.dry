@@ -1,3 +1,5 @@
+#!/usr/bin/dry
+
 function factorial(n)
 {
 	if (n == 0)

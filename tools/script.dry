@@ -1,5 +1,0 @@
-#!/usr/bin/dry
-function double(n)
-{
-	return n * 2;
-}
