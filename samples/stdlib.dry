@@ -1,0 +1,65 @@
+#!/usr/bin/dry
+
+// ============ NUMBERS ============ \\
+
+function int(n)
+
+function float(n)
+
+function max(a, b)
+
+function min(a, b)
+
+function abs(n)
+
+function ceil(n)
+
+function floor(n)
+
+function sqrt(n)
+
+function round(n, d)
+
+function log(n)
+
+function log10(n)
+
+function cos(n)
+
+function sin(n)
+
+function tan(n)
+
+function degrees(n)
+
+function radians(n)
+
+function random(a, b)
+
+// ========== ARRAY/STRING ========== \\
+
+function length(a)
+
+function empty(a)
+
+function contains(a, e)
+
+// ============= STRING ============= \\
+
+function string(s)
+
+function startsWith(s, t)
+
+function endsWith(s, t)
+
+function trim(s)
+
+function join(s, t)
+
+function lowerCase(s)
+
+function upperCase(s)
+
+// ============= ARRAY ============= \\
+
+function reverse(a)

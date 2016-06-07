@@ -1,22 +1,22 @@
 #!/usr/bin/dry
 
-function factorial(n)
+function ifExample(a, b)
 {
-	if (n == 0)
+	if (a > b)
 	{
-		return 1;
+		return "a > b";
 	}
-	elsif (i != 0)
+	elsif (a < b)
 	{
-		aaa
+		return "a < b";
 	}
 	else
 	{
-		return n * factorial(n - 1);
+		return "a = b";
 	}
 }
 
-function loop(a, b)
+function loopExample(a, b)
 {
 	for (i, a..b)
 	{
@@ -26,12 +26,52 @@ function loop(a, b)
 	while (i > 0)
 	{
 		print(i);
-		i = i - 1;
+		i--;
 	}
 
-	num  = readNumber();
-	text = readText();
-	char = readChar();
-
 	print('pwd');
+}
+
+function arraysExample(a, b)
+{
+	arrayEmpty = [];
+	arrayRange = a..b;
+	arrayStatic = [1, 2, 3];
+	arrayConcat = arrayRange + arrayStatic;
+	arrayConcat[0] = "First!";
+
+	associativeArray = [];
+	associativeArray["firstName"] = "Arthur";
+	associativeArray["lastName"] = "Vandelay";
+	associativeArray["age"] = 32;
+}
+
+function stringsExample(dir, user)
+{
+	text = "AKANT";
+	text = text + " DEMOR";
+	text[length(text)] = "!";
+
+	character = text[0];
+	command = "mv $dir/file.txt /home/$user/file.txt";
+}
+
+function readExample(a, b)
+{
+	num = readNumber();
+	println(num);
+
+	line = readLine();
+	println(line);
+
+	char = readChar();
+	println(char);
+}
+
+function executeExample()
+{
+	pwd = `pwd`;
+	print(pwd);
+
+	exec(echo 'hi'");
 }

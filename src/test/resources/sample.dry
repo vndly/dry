@@ -1,4 +1,8 @@
-function duoble(n)
+#!/usr/bin/dry
+
+function double(n)
 {
 	return n * 2;
 }
+
+print(double(3));
