@@ -2,64 +2,78 @@
 
 // ============ NUMBERS ============ \\
 
-function int(n)
+int(n)
 
-function float(n)
+float(n)
 
-function max(a, b)
+max(a, b)
 
-function min(a, b)
+min(a, b)
 
-function abs(n)
+abs(n)
 
-function ceil(n)
+ceil(n)
 
-function floor(n)
+floor(n)
 
-function sqrt(n)
+sqrt(n)
 
-function round(n, d)
+round(n, d)
 
-function log(n)
+log(n)
 
-function log10(n)
+log10(n)
 
-function cos(n)
+cos(n)
 
-function sin(n)
+sin(n)
 
-function tan(n)
+tan(n)
 
-function degrees(n)
+degrees(n)
 
-function radians(n)
+radians(n)
 
-function random(a, b)
+random(a, b)
 
 // ========== ARRAY/STRING ========== \\
 
-function length(a)
+length(a)
 
-function empty(a)
+empty(a)
 
-function contains(a, e)
+contains(a, e)
 
 // ============= STRING ============= \\
 
-function string(s)
+string(s)
 
-function startsWith(s, t)
+startsWith(s, t)
 
-function endsWith(s, t)
+endsWith(s, t)
 
-function trim(s)
+trim(s)
 
-function join(s, t)
+join(s, t)
 
-function lowerCase(s)
+lowerCase(s)
 
-function upperCase(s)
+upperCase(s)
 
 // ============= ARRAY ============= \\
 
-function reverse(a)
+reverse(a)
+
+// ============== FILE ============= \\
+
+read(f)
+
+readLines(f)
+
+write(f, s)
+
+append(f, s)
+
+exist(f)
+
+delete(f)
