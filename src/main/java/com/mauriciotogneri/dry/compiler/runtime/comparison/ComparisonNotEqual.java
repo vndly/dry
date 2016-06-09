@@ -14,6 +14,6 @@ public class ComparisonNotEqual extends ComparisonExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).notEqual(right.evaluate(context));
     }
 }

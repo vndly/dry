@@ -39,6 +39,26 @@ public class NumberConstant extends Constant
         return new NumberConstant(value % number.value);
     }
 
+    public BooleanConstant less(NumberConstant number)
+    {
+        return new BooleanConstant(value < number.value);
+    }
+
+    public BooleanConstant lessEqual(NumberConstant number)
+    {
+        return new BooleanConstant(value <= number.value);
+    }
+
+    public BooleanConstant greater(NumberConstant number)
+    {
+        return new BooleanConstant(value > number.value);
+    }
+
+    public BooleanConstant greaterEqual(NumberConstant number)
+    {
+        return new BooleanConstant(value >= number.value);
+    }
+
     @Override
     public NumberConstant asNumber()
     {

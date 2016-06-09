@@ -16,6 +16,6 @@ public class LogicNot implements Expression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return expression.evaluate(context).asBoolean().not();
     }
 }

@@ -14,6 +14,6 @@ public class LogicAnd extends LogicExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asBoolean().and(right.evaluate(context).asBoolean());
     }
 }

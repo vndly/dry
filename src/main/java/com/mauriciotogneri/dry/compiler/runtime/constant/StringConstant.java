@@ -32,4 +32,28 @@ public class StringConstant extends Constant
     {
         return null; // TODO
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        else if ((o == null) || (getClass() != o.getClass()))
+        {
+            return false;
+        }
+
+        StringConstant that = (StringConstant) o;
+
+        return value.equals(that.value);
+
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 }

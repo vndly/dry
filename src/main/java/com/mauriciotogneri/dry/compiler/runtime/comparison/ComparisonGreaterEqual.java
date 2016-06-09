@@ -14,6 +14,6 @@ public class ComparisonGreaterEqual extends ComparisonExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asNumber().greaterEqual(right.evaluate(context).asNumber());
     }
 }

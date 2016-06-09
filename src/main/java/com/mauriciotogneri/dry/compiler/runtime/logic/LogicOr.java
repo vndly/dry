@@ -14,6 +14,6 @@ public class LogicOr extends LogicExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asBoolean().or(right.evaluate(context).asBoolean());
     }
 }

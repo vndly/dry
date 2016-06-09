@@ -1,8 +1,8 @@
 package com.mauriciotogneri.dry.compiler.runtime.comparison;
 
-import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 import com.mauriciotogneri.dry.compiler.runtime.Context;
 import com.mauriciotogneri.dry.compiler.runtime.Expression;
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
 public class ComparisonEqual extends ComparisonExpression
 {
@@ -14,6 +14,6 @@ public class ComparisonEqual extends ComparisonExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).equal(right.evaluate(context));
     }
 }
