@@ -3,6 +3,7 @@ package com.mauriciotogneri.dry.compiler.runtime;
 import com.mauriciotogneri.dry.compiler.runtime.constant.ArrayConstant;
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 import com.mauriciotogneri.dry.compiler.runtime.constant.UndefinedConstant;
+import com.mauriciotogneri.dry.compiler.runtime.variable.Variable;
 
 import java.util.HashMap;
 import java.util.List;

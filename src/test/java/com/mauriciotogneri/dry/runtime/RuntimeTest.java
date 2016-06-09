@@ -3,7 +3,7 @@ package com.mauriciotogneri.dry.runtime;
 import com.mauriciotogneri.dry.base.TestSuite;
 import com.mauriciotogneri.dry.compiler.runtime.Context;
 import com.mauriciotogneri.dry.compiler.runtime.Expression;
-import com.mauriciotogneri.dry.compiler.runtime.Variable;
+import com.mauriciotogneri.dry.compiler.runtime.variable.VariableSimple;
 import com.mauriciotogneri.dry.compiler.runtime.arithmetic.ArithmeticAdd;
 import com.mauriciotogneri.dry.compiler.runtime.arithmetic.ArithmeticMul;
 import com.mauriciotogneri.dry.compiler.runtime.comparison.ComparisonEqual;
@@ -56,7 +56,7 @@ public class RuntimeTest extends TestSuite
         // (2 + a) == 2
         Context context = new Context(Arrays.asList("a"), Arrays.asList(new NumberConstant(3)));
         Expression expression = new ComparisonEqual(new ArithmeticAdd(new NumberConstant(2),
-                                                                      new Variable("a")),
+                                                                      new VariableSimple("a")),
                                                     new NumberConstant(5));
         assertEquals(expression.evaluate(context), new BooleanConstant(true));
     }
