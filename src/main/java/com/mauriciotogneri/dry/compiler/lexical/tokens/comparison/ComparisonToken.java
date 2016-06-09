@@ -10,9 +10,9 @@ public class ComparisonToken extends Token
         super(lexeme);
     }
 
-     @Override
-     public boolean isComparison()
-     {
-         return true;
-     }
+    @Override
+    public boolean isComparison()
+    {
+        return true;
+    }
 }
