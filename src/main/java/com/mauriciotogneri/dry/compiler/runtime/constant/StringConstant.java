@@ -19,7 +19,14 @@ public class StringConstant extends Constant
     @Override
     public NumberConstant asNumber()
     {
-        return new NumberConstant(Double.parseDouble(value));
+        try
+        {
+            return new NumberConstant(Double.parseDouble(value));
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException();
+        }
     }
 
     @Override
@@ -31,7 +38,7 @@ public class StringConstant extends Constant
     @Override
     public BooleanConstant asBoolean()
     {
-        return null; // TODO
+        return new BooleanConstant(!value.isEmpty());
     }
 
     @Override

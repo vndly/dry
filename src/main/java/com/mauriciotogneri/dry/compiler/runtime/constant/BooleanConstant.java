@@ -34,7 +34,7 @@ public class BooleanConstant extends Constant
     @Override
     public NumberConstant asNumber()
     {
-        return null; // TODO
+        throw new RuntimeException();
     }
 
     @Override

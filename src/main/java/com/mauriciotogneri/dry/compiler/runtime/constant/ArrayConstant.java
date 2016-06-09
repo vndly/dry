@@ -21,6 +21,11 @@ public class ArrayConstant extends Constant
         }
     }
 
+    public ArrayConstant(String key, Constant value)
+    {
+        this.value.put(key, value);
+    }
+
     public List<Constant> value()
     {
         List<String> keys = new ArrayList<>();
@@ -30,22 +35,41 @@ public class ArrayConstant extends Constant
         return keys.stream().map(value::get).collect(Collectors.toList());
     }
 
+    public Constant get(String key)
+    {
+        if (value.containsKey(key))
+        {
+            return value.get(key);
+        }
+        else
+        {
+            return UndefinedConstant.INSTANCE;
+        }
+    }
+
+    public ArrayConstant put(String key, Constant constant)
+    {
+        value.put(key, constant);
+
+        return this;
+    }
+
     @Override
     public NumberConstant asNumber()
     {
-        return null; // TODO
+        throw new RuntimeException();
     }
 
     @Override
     public StringConstant asString()
     {
-        return null; // TODO
+        throw new RuntimeException();
     }
 
     @Override
     public BooleanConstant asBoolean()
     {
-        return null; // TODO
+        throw new RuntimeException();
     }
 
     @Override

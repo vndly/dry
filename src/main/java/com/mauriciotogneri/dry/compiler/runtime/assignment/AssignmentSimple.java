@@ -1,15 +1,19 @@
-package com.mauriciotogneri.dry.compiler.runtime;
+package com.mauriciotogneri.dry.compiler.runtime.assignment;
 
+import com.mauriciotogneri.dry.compiler.runtime.Context;
+import com.mauriciotogneri.dry.compiler.runtime.Expression;
+import com.mauriciotogneri.dry.compiler.runtime.Statement;
+import com.mauriciotogneri.dry.compiler.runtime.Variable;
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
 import java.util.Optional;
 
-public class Assignment implements Statement
+public class AssignmentSimple implements Statement
 {
     private final Variable variable;
     private final Expression expression;
 
-    public Assignment(Variable variable, Expression expression)
+    public AssignmentSimple(Variable variable, Expression expression)
     {
         this.variable = variable;
         this.expression = expression;

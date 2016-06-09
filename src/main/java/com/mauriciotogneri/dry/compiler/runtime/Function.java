@@ -1,19 +1,35 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
-import java.util.List;
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
+import com.mauriciotogneri.dry.compiler.runtime.constant.UndefinedConstant;
 
-public abstract class Function extends Node
+import java.util.List;
+import java.util.Optional;
+
+public abstract class Function
 {
-    private final String name;
     private final List<String> parameters;
     private final Block statements;
 
-    public Function(String name, List<String> parameters, Block statements)
+    public Function(List<String> parameters, Block statements)
     {
-        this.name = name;
         this.parameters = parameters;
         this.statements = statements;
     }
 
-    public abstract Block apply(Context context);
+    public Constant apply(List<Constant> arguments)
+    {
+        Context context = new Context(parameters, arguments);
+
+        Optional<Constant> result = statements.execute(context);
+
+        if (result.isPresent())
+        {
+            return result.get();
+        }
+        else
+        {
+            return UndefinedConstant.INSTANCE;
+        }
+    }
 }

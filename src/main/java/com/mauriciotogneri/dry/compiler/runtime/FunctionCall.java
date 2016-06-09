@@ -3,6 +3,7 @@ package com.mauriciotogneri.dry.compiler.runtime;
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FunctionCall implements Expression
 {
@@ -18,6 +19,6 @@ public class FunctionCall implements Expression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return function.apply(arguments.stream().map(e -> e.evaluate(context)).collect(Collectors.toList()));
     }
 }
