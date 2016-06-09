@@ -43,6 +43,12 @@ public class BooleanConstant extends Constant
     }
 
     @Override
+    public ArrayConstant asArray()
+    {
+        return null; // TODO
+    }
+
+    @Override
     public boolean equals(Object o)
     {
         if (this == o)

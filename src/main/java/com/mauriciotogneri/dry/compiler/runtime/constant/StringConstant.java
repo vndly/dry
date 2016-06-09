@@ -26,4 +26,10 @@ public class StringConstant extends Constant
     {
         return null; // TODO
     }
+
+    @Override
+    public ArrayConstant asArray()
+    {
+        return null; // TODO
+    }
 }

@@ -14,6 +14,6 @@ public class ArithmeticMod extends ArithmeticExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asNumber().mod(right.evaluate(context).asNumber());
     }
 }

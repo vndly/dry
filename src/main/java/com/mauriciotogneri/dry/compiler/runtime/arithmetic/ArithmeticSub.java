@@ -14,6 +14,6 @@ public class ArithmeticSub extends ArithmeticExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asNumber().sub(right.evaluate(context).asNumber());
     }
 }

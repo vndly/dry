@@ -11,6 +11,8 @@ public abstract class Constant implements Expression
 
     public abstract BooleanConstant asBoolean();
 
+    public abstract ArrayConstant asArray();
+
     @Override
     public Constant evaluate(Context context)
     {

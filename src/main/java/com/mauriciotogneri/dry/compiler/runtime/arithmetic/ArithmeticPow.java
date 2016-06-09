@@ -14,6 +14,6 @@ public class ArithmeticPow extends ArithmeticExpression
     @Override
     public Constant evaluate(Context context)
     {
-        return null; // TODO
+        return left.evaluate(context).asNumber().pow(right.evaluate(context).asNumber());
     }
 }
