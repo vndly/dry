@@ -1,6 +1,8 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
-public class Variable
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
+
+public class Variable implements Expression
 {
     private final String name;
 
@@ -12,5 +14,11 @@ public class Variable
     public String name()
     {
         return name;
+    }
+
+    @Override
+    public Constant evaluate(Context context)
+    {
+        return context.get(this);
     }
 }
