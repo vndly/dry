@@ -1,5 +1,7 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
+
 import java.util.List;
 
 public class FunctionCall implements Expression
@@ -14,7 +16,7 @@ public class FunctionCall implements Expression
     }
 
     @Override
-    public Value evaluate(Context context)
+    public Constant evaluate(Context context)
     {
         return null; // TODO
     }

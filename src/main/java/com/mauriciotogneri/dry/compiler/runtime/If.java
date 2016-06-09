@@ -1,5 +1,7 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
+
 public class If implements Statement
 {
     private final Expression condition;
@@ -14,7 +16,7 @@ public class If implements Statement
     }
 
     @Override
-    public Value execute(Context context)
+    public Constant execute(Context context)
     {
         return null; // TODO
     }

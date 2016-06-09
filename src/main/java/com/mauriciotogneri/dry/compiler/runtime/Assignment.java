@@ -1,5 +1,7 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
+
 public class Assignment implements Statement
 {
     private final Variable variable;
@@ -12,7 +14,7 @@ public class Assignment implements Statement
     }
 
     @Override
-    public Value execute(Context context)
+    public Constant execute(Context context)
     {
         return null; // TODO
     }
