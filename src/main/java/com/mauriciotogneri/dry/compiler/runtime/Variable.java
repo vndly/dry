@@ -1,10 +1,16 @@
 package com.mauriciotogneri.dry.compiler.runtime;
 
-public interface Variable
+public class Variable
 {
-    // name
-    // type: simple/complex
-    // set/get
+    private final String name;
 
-    String name();
+    public Variable(String name)
+    {
+        this.name = name;
+    }
+
+    public String name()
+    {
+        return name;
+    }
 }
