@@ -2,7 +2,9 @@ package com.mauriciotogneri.dry.compiler.runtime;
 
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
+import java.util.Optional;
+
 public interface Statement
 {
-    Constant execute(Context context);
+    Optional<Constant> execute(Context context);
 }

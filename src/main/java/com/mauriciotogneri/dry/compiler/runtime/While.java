@@ -2,6 +2,8 @@ package com.mauriciotogneri.dry.compiler.runtime;
 
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
+import java.util.Optional;
+
 public class While implements Statement
 {
     private final Expression condition;
@@ -14,8 +16,18 @@ public class While implements Statement
     }
 
     @Override
-    public Constant execute(Context context)
+    public Optional<Constant> execute(Context context)
     {
-        return null; // TODO
+        while (condition.evaluate(context).asBoolean().value())
+        {
+            Optional<Constant> result = statements.execute(context);
+
+            if (result.isPresent())
+            {
+                return result;
+            }
+        }
+
+        return Optional.empty();
     }
 }

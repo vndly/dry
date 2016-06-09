@@ -1,5 +1,7 @@
 package com.mauriciotogneri.dry.compiler.runtime.constant;
 
+import java.util.Arrays;
+
 public class StringConstant extends Constant
 {
     private final String value;
@@ -7,6 +9,11 @@ public class StringConstant extends Constant
     public StringConstant(String value)
     {
         this.value = value;
+    }
+
+    public String value()
+    {
+        return value;
     }
 
     @Override
@@ -30,7 +37,7 @@ public class StringConstant extends Constant
     @Override
     public ArrayConstant asArray()
     {
-        return null; // TODO
+        return new ArrayConstant(Arrays.asList(this));
     }
 
     @Override

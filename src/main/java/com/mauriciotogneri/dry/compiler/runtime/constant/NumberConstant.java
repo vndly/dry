@@ -1,5 +1,7 @@
 package com.mauriciotogneri.dry.compiler.runtime.constant;
 
+import java.util.Arrays;
+
 public class NumberConstant extends Constant
 {
     private final double value;
@@ -59,6 +61,11 @@ public class NumberConstant extends Constant
         return new BooleanConstant(value >= number.value);
     }
 
+    public double value()
+    {
+        return value;
+    }
+
     @Override
     public NumberConstant asNumber()
     {
@@ -80,7 +87,7 @@ public class NumberConstant extends Constant
     @Override
     public ArrayConstant asArray()
     {
-        return null; // TODO
+        return new ArrayConstant(Arrays.asList(this));
     }
 
     @Override

@@ -2,6 +2,8 @@ package com.mauriciotogneri.dry.compiler.runtime;
 
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 
+import java.util.Optional;
+
 public class Assignment implements Statement
 {
     private final Variable variable;
@@ -14,8 +16,10 @@ public class Assignment implements Statement
     }
 
     @Override
-    public Constant execute(Context context)
+    public Optional<Constant> execute(Context context)
     {
-        return null; // TODO
+        context.set(variable, expression.evaluate(context));
+
+        return Optional.empty();
     }
 }

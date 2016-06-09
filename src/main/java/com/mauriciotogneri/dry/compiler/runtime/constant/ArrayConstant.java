@@ -1,8 +1,11 @@
 package com.mauriciotogneri.dry.compiler.runtime.constant;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ArrayConstant extends Constant
 {
@@ -16,6 +19,15 @@ public class ArrayConstant extends Constant
         {
             this.value.put(String.valueOf(i), values.get(i));
         }
+    }
+
+    public List<Constant> value()
+    {
+        List<String> keys = new ArrayList<>();
+        keys.addAll(value.keySet());
+        Collections.sort(keys, String::compareTo);
+
+        return keys.stream().map(value::get).collect(Collectors.toList());
     }
 
     @Override

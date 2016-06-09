@@ -8,4 +8,9 @@ import java.util.Map;
 public class Context
 {
     private final Map<String, Constant> variables = new HashMap<>();
+
+    public void set(Variable variable, Constant constant)
+    {
+        // TODO
+    }
 }
