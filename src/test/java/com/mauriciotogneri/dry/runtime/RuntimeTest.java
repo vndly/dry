@@ -3,16 +3,28 @@ package com.mauriciotogneri.dry.runtime;
 import com.mauriciotogneri.dry.base.TestSuite;
 import com.mauriciotogneri.dry.compiler.runtime.Context;
 import com.mauriciotogneri.dry.compiler.runtime.Expression;
-import com.mauriciotogneri.dry.compiler.runtime.variable.VariableSimple;
 import com.mauriciotogneri.dry.compiler.runtime.arithmetic.ArithmeticAdd;
 import com.mauriciotogneri.dry.compiler.runtime.arithmetic.ArithmeticMul;
+import com.mauriciotogneri.dry.compiler.runtime.assignment.AssignmentSimple;
 import com.mauriciotogneri.dry.compiler.runtime.comparison.ComparisonEqual;
+import com.mauriciotogneri.dry.compiler.runtime.comparison.ComparisonLess;
 import com.mauriciotogneri.dry.compiler.runtime.constant.BooleanConstant;
+import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 import com.mauriciotogneri.dry.compiler.runtime.constant.NumberConstant;
+import com.mauriciotogneri.dry.compiler.runtime.constant.UndefinedConstant;
+import com.mauriciotogneri.dry.compiler.runtime.function.Function;
+import com.mauriciotogneri.dry.compiler.runtime.function.FunctionCall;
+import com.mauriciotogneri.dry.compiler.runtime.statements.Block;
+import com.mauriciotogneri.dry.compiler.runtime.statements.While;
+import com.mauriciotogneri.dry.compiler.runtime.variable.Variable;
+import com.mauriciotogneri.dry.compiler.runtime.variable.VariableSimple;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
@@ -59,5 +71,48 @@ public class RuntimeTest extends TestSuite
                                                                       new VariableSimple("a")),
                                                     new NumberConstant(5));
         assertEquals(expression.evaluate(context), new BooleanConstant(true));
+    }
+
+    @Test
+    public void testWhile() throws Exception
+    {
+        // a = 1
+        // while(a < 10)
+        // {
+        //     a = a + 1
+        //     print(a)
+        // }
+        Context context = new Context();
+
+        Function print = new Function()
+        {
+            @Override
+            public Constant apply(List<Constant> arguments)
+            {
+                System.out.println(arguments.get(0));
+
+                return UndefinedConstant.INSTANCE;
+            }
+        };
+
+        Variable a = new VariableSimple("a");
+
+        List<Expression> functionParameters = new ArrayList<>();
+        functionParameters.add(a);
+
+        Block whileBlock = new Block();
+        whileBlock.add(new AssignmentSimple(a,
+                                            new ArithmeticAdd(a,
+                                                              new NumberConstant(1))));
+        whileBlock.add(new FunctionCall(print, functionParameters));
+
+        Block block = new Block();
+        block.add(new AssignmentSimple(a,
+                                       new NumberConstant(1)));
+        block.add(new While(new ComparisonLess(a,
+                                               new NumberConstant(10)),
+                            whileBlock));
+
+        assertEquals(block.execute(context), Optional.empty());
     }
 }

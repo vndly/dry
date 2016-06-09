@@ -70,4 +70,10 @@ public class StringConstant extends Constant
     {
         return value.hashCode();
     }
+
+    @Override
+    public String toString()
+    {
+        return value;
+    }
 }

@@ -1,5 +1,6 @@
-package com.mauriciotogneri.dry.compiler.runtime;
+package com.mauriciotogneri.dry.compiler.runtime.function;
 
+import com.mauriciotogneri.dry.compiler.runtime.Context;
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 import com.mauriciotogneri.dry.compiler.runtime.constant.UndefinedConstant;
 import com.mauriciotogneri.dry.compiler.runtime.statements.Block;
@@ -7,12 +8,12 @@ import com.mauriciotogneri.dry.compiler.runtime.statements.Block;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Function
+public class CustomFunction extends Function
 {
     private final List<String> parameters;
     private final Block statements;
 
-    public Function(List<String> parameters, Block statements)
+    public CustomFunction(List<String> parameters, Block statements)
     {
         this.parameters = parameters;
         this.statements = statements;

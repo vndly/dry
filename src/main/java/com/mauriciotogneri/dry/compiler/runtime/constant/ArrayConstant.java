@@ -101,4 +101,24 @@ public class ArrayConstant extends Constant
     {
         return value.hashCode();
     }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+
+        List<Constant> list = value();
+
+        for (Constant element : list)
+        {
+            if (builder.length() != 0)
+            {
+                builder.append(", ");
+            }
+
+            builder.append(element.toString());
+        }
+
+        return String.format("[%s]", builder.toString());
+    }
 }

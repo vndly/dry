@@ -115,4 +115,19 @@ public class NumberConstant extends Constant
 
         return (int) (temp ^ (temp >>> 32));
     }
+
+    @Override
+    public String toString()
+    {
+        long longValue = (long) value;
+
+        if (Double.compare(value, longValue) == 0)
+        {
+            return String.valueOf(longValue);
+        }
+        else
+        {
+            return String.valueOf(value);
+        }
+    }
 }

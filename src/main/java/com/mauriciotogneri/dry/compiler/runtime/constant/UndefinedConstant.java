@@ -33,4 +33,10 @@ public class UndefinedConstant extends Constant
     {
         return new ArrayConstant(new ArrayList<>());
     }
+
+    @Override
+    public String toString()
+    {
+        return "undefined";
+    }
 }
