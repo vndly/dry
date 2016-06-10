@@ -8,7 +8,6 @@ import com.mauriciotogneri.dry.compiler.runtime.statements.Statement;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class FunctionCall implements Expression, Statement
 {
@@ -24,7 +23,7 @@ public class FunctionCall implements Expression, Statement
     @Override
     public Constant evaluate(Context context)
     {
-        return function.apply(arguments.stream().map(e -> e.evaluate(context)).collect(Collectors.toList()));
+        return function.apply(arguments.stream().map(e -> e.evaluate(context)).toArray(Constant[]::new));
     }
 
     @Override

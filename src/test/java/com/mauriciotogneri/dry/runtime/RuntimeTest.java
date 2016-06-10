@@ -65,7 +65,7 @@ public class RuntimeTest extends TestSuite
     public void testContext() throws Exception
     {
         // (2 + a) == 2
-        Context context = new Context(Arrays.asList("a"), Arrays.asList(new NumberConstant(3)));
+        Context context = new Context(Arrays.asList("a"), new NumberConstant(3));
         Expression expression = new ComparisonEqual(new ArithmeticAdd(new NumberConstant(2),
                                                                       new VariableSimple("a")),
                                                     new NumberConstant(5));
@@ -86,9 +86,9 @@ public class RuntimeTest extends TestSuite
         Function print = new Function()
         {
             @Override
-            public Constant apply(List<Constant> arguments)
+            public Constant apply(Constant... arguments)
             {
-                System.out.println(arguments.get(0));
+                System.out.println(arguments[0]);
 
                 return UndefinedConstant.INSTANCE;
             }

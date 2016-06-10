@@ -19,7 +19,7 @@ public class CustomFunction extends Function
         this.statements = statements;
     }
 
-    public Constant apply(List<Constant> arguments)
+    public Constant apply(Constant... arguments)
     {
         Context context = new Context(parameters, arguments);
 

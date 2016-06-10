@@ -17,15 +17,15 @@ public class Context
     {
     }
 
-    public Context(List<String> parameters, List<Constant> constants)
+    public Context(List<String> parameters, Constant... constants)
     {
         int parametersSize = parameters.size();
-        int constantsSize = constants.size();
+        int constantsSize = constants.length;
 
         for (int i = 0; i < parametersSize; i++)
         {
             String name = parameters.get(i);
-            Constant value = (i < constantsSize) ? constants.get(i) : UndefinedConstant.INSTANCE;
+            Constant value = (i < constantsSize) ? constants[i] : UndefinedConstant.INSTANCE;
 
             variables.put(name, value);
         }
