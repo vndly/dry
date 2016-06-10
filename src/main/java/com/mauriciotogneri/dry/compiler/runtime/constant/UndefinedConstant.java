@@ -1,7 +1,5 @@
 package com.mauriciotogneri.dry.compiler.runtime.constant;
 
-import java.util.ArrayList;
-
 public class UndefinedConstant extends Constant
 {
     public static final Constant INSTANCE = new UndefinedConstant();
@@ -25,13 +23,13 @@ public class UndefinedConstant extends Constant
     @Override
     public BooleanConstant asBoolean()
     {
-        return new BooleanConstant(true);
+        return new BooleanConstant(false);
     }
 
     @Override
     public ArrayConstant asArray()
     {
-        return new ArrayConstant(new ArrayList<>());
+        return new ArrayConstant();
     }
 
     @Override

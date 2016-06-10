@@ -10,6 +10,11 @@ public class VariableSimple extends Variable
         super(name);
     }
 
+    public void set(Constant constant, Context context)
+    {
+        context.set(this, constant);
+    }
+
     @Override
     public Constant evaluate(Context context)
     {

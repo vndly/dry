@@ -16,7 +16,6 @@ import com.mauriciotogneri.dry.compiler.runtime.function.Function;
 import com.mauriciotogneri.dry.compiler.runtime.function.FunctionCall;
 import com.mauriciotogneri.dry.compiler.runtime.statements.Block;
 import com.mauriciotogneri.dry.compiler.runtime.statements.While;
-import com.mauriciotogneri.dry.compiler.runtime.variable.Variable;
 import com.mauriciotogneri.dry.compiler.runtime.variable.VariableSimple;
 
 import org.junit.Test;
@@ -95,7 +94,7 @@ public class RuntimeTest extends TestSuite
             }
         };
 
-        Variable a = new VariableSimple("a");
+        VariableSimple a = new VariableSimple("a");
 
         List<Expression> functionParameters = new ArrayList<>();
         functionParameters.add(a);

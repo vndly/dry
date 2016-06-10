@@ -6,7 +6,7 @@ public abstract class Variable implements Expression
 {
     private final String name;
 
-    protected Variable(String name)
+    public Variable(String name)
     {
         this.name = name;
     }

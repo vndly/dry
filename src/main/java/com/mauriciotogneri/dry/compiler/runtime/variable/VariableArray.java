@@ -15,6 +15,11 @@ public class VariableArray extends Variable
         this.key = key;
     }
 
+    public void set(Constant key, Constant constant, Context context)
+    {
+        context.set(this, key, constant);
+    }
+
     @Override
     public Constant evaluate(Context context)
     {

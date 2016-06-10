@@ -11,6 +11,10 @@ public class ArrayConstant extends Constant
 {
     private final Map<String, Constant> value = new HashMap<>();
 
+    public ArrayConstant()
+    {
+    }
+
     public ArrayConstant(List<Constant> values)
     {
         int size = values.size();
