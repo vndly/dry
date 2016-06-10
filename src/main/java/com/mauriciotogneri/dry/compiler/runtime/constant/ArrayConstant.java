@@ -51,7 +51,7 @@ public class ArrayConstant extends Constant
         }
     }
 
-    public ArrayConstant put(String key, Constant constant)
+    public ArrayConstant set(String key, Constant constant)
     {
         value.put(key, constant);
 

@@ -33,11 +33,9 @@ public class Context
 
     public Constant get(Variable variable)
     {
-        String name = variable.name();
-
-        if (variables.containsKey(name))
+        if (contains(variable))
         {
-            return variables.get(name);
+            return variables.get(variable.name());
         }
         else
         {
@@ -47,9 +45,7 @@ public class Context
 
     public Constant get(Variable variable, Constant key)
     {
-        String name = variable.name();
-
-        if (variables.containsKey(name))
+        if (contains(variable))
         {
             return get(variable).asArray().get(key.asString().value());
         }
@@ -69,14 +65,18 @@ public class Context
         String name = variable.name();
         String keyName = key.asString().value();
 
-        if (variables.containsKey(name))
+        if (contains(variable))
         {
-            Constant newValue = variables.get(name).asArray().put(keyName, constant);
-            variables.put(name, newValue);
+            variables.put(name, variables.get(name).asArray().set(keyName, constant));
         }
         else
         {
             variables.put(name, new ArrayConstant(keyName, constant));
         }
+    }
+
+    private boolean contains(Variable variable)
+    {
+        return variables.containsKey(variable.name());
     }
 }
