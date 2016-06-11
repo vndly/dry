@@ -29,13 +29,13 @@ function loopExample(a, b)
 		i--;
 	}
 
-	print('pwd');
+	print(`pwd`);
 }
 
 function arraysExample(a, b)
 {
 	arrayEmpty = [];
-	arrayRange = a..b;
+	arrayRange = a..b; // or 1..10
 	arrayStatic = [1, 2, 3];
 	arrayConcat = arrayRange + arrayStatic;
 	arrayConcat[0] = "First!";
@@ -54,24 +54,28 @@ function stringsExample(dir, user)
 
 	character = text[0];
 	command = "mv $dir/file.txt /home/$user/file.txt";
+
 }
 
 function readExample(a, b)
 {
+	print("Enter a number: ");
 	num = readNumber();
 	println(num);
 
+	print("Enter a line: ");
 	line = readLine();
 	println(line);
 
+	print("Enter a character: ");
 	char = readChar();
 	println(char);
 }
 
 function executeExample()
 {
-	pwd = `pwd`;
+	pwd = `pwd`; // holds the result of executing the command pwd
 	print(pwd);
 
-	exec(echo 'hi'");
+	exec(`echo 'hi'`);
 }

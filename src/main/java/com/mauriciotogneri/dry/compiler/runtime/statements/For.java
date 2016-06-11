@@ -5,7 +5,7 @@ import com.mauriciotogneri.dry.compiler.runtime.Expression;
 import com.mauriciotogneri.dry.compiler.runtime.constant.Constant;
 import com.mauriciotogneri.dry.compiler.runtime.variable.VariableSimple;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 
 public class For implements Statement
@@ -24,7 +24,7 @@ public class For implements Statement
     @Override
     public Optional<Constant> execute(Context context)
     {
-        List<Constant> array = range.evaluate(context).asArray().value();
+        Collection<Constant> array = range.evaluate(context).asArray().value();
 
         for (Constant element : array)
         {

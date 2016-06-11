@@ -1,15 +1,13 @@
 package com.mauriciotogneri.dry.compiler.runtime.constant;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class ArrayConstant extends Constant
 {
-    private final Map<String, Constant> value = new HashMap<>();
+    private final SortedMap<String, Constant> value = new TreeMap<>();
 
     public ArrayConstant()
     {
@@ -30,13 +28,9 @@ public class ArrayConstant extends Constant
         this.value.put(key, value);
     }
 
-    public List<Constant> value()
+    public Collection<Constant> value()
     {
-        List<String> keys = new ArrayList<>();
-        keys.addAll(value.keySet());
-        Collections.sort(keys, String::compareTo);
-
-        return keys.stream().map(value::get).collect(Collectors.toList());
+        return value.values();
     }
 
     public Constant get(String key)
@@ -73,7 +67,7 @@ public class ArrayConstant extends Constant
     @Override
     public BooleanConstant asBoolean()
     {
-        throw new RuntimeException();
+        return new BooleanConstant(!value.isEmpty());
     }
 
     @Override
@@ -111,9 +105,7 @@ public class ArrayConstant extends Constant
     {
         StringBuilder builder = new StringBuilder();
 
-        List<Constant> list = value();
-
-        for (Constant element : list)
+        for (Constant element : value.values())
         {
             if (builder.length() != 0)
             {

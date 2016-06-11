@@ -3,6 +3,7 @@ package com.mauriciotogneri.dry.compiler.runtime.constant;
 import com.mauriciotogneri.dry.compiler.runtime.Context;
 import com.mauriciotogneri.dry.compiler.runtime.Expression;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Constant implements Expression
@@ -32,7 +33,7 @@ public abstract class Constant implements Expression
 
     public List<Constant> array()
     {
-        return asArray().value();
+        return new ArrayList<>(asArray().value());
     }
 
     public BooleanConstant equal(Constant constant)
