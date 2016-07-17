@@ -48,13 +48,14 @@ function arraysExample(a, b)
 
 function stringsExample(dir, user)
 {
-	text = "AKANT";
-	text = text + " DEMOR";
+	text = "Hello";
+	text = text + ", world ";
 	text[length(text)] = "!";
 
 	character = text[0];
 	command = "mv $dir/file.txt /home/$user/file.txt";
 
+	result = `$command`
 }
 
 function readExample(a, b)
@@ -78,4 +79,13 @@ function executeExample()
 	print(pwd);
 
 	exec(`echo 'hi'`);
+}
+
+function functionalTest(f, g)
+{
+	a = f(g(1));
+
+	b = function(x) { return x * 2; };
+
+	return function(a, b) { return a + b; };
 }
